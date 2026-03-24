@@ -19,13 +19,16 @@ jobs:
       - image: cimg/node:18.16.0
     steps:
       - checkout
+      
       - run: npm install
+       
       - run:
-        name: Run tests
-        command: npm test || echo "no tests found"
+          name: Run tests
+          command: npm test || echo "no tests found"
+       
       - run:
-        name: Security audit
-        command: npm audit || true
+          name: Security audit
+          command: npm audit || true
 
   deploy:
       machine: true
