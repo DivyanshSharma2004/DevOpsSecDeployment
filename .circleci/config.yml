@@ -39,8 +39,8 @@ jobs:
             command: |
               ssh -o StrictHostKeyChecking=no ec2-user@13.60.51.168 "
                 cd DevOpsSecDeployment &&
-                echo \"$PRIVATE_KEY\" > bin/privatekey.pem &&
-                echo \"$SERVER\" > bin/server.crt &&
+                echo \"$PRIVATE_KEY\" > privatekey.pem &&
+                echo \"$SERVER\" > server.crt &&
                 git pull &&
                 npm install &&
                 pm2 restart myapp || pm2 start bin/www --name myapp
